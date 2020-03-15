@@ -4,11 +4,13 @@ from nltk import Text, FreqDist
 from functools import reduce
 import operator
 import string
-from nltk.book import text1
+#from nltk.book import text1
+from nltk.corpus import gutenberg
 
 num_of_words_to_plot = 20
 num_of_words_compare = 50
 file_path = "/home/helena/Documents/NLP/data/study_in_scarlet.txt"
+moby_file_name = 'melville-moby_dick.txt'
 
 # Read file
 file = open(file_path, 'r')
@@ -37,7 +39,10 @@ scarlet_commons = [word for word, counts in fdist.most_common(num_of_words_compa
 print('Most common words for Study in Scarlet:\n', fdist.most_common(num_of_words_to_plot), '\n\n')
 
 # Moby Dick frequencies
-fdist_moby = FreqDist(text1)
+moby_raw_text = gutenberg.raw(moby_file_name)
+moby_tokens = tokenizer.tokenize(moby_raw_text.lower())
+moby_text = Text([w for w in moby_tokens if w not in stop])
+fdist_moby = FreqDist(moby_text)
 moby_commons = [word for word, counts in fdist_moby.most_common(num_of_words_compare)]
 print('Most common words for Moby Dick:\n', fdist_moby.most_common(num_of_words_compare))
 
