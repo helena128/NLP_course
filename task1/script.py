@@ -49,8 +49,8 @@ print('Most common words for Moby Dick:\n', fdist_moby.most_common(num_of_words_
 # Frequencies comparison
 ## In scarlet but not in moby
 diff_scarlet_vs_moby = [word for word in scarlet_commons if word not in moby_commons]
-print('In Study in scarlet, but not in Moby Dick: ', ', '.join(diff_scarlet_vs_moby))
+print('=============\nIn Study in scarlet, but not in Moby Dick: ', ', '.join(diff_scarlet_vs_moby))
 
 ## In scarlet but not in moby
 diff_moby_vs_scarlet = [word for word in moby_commons if  word not in scarlet_commons]
-print('In Moby Dick, but not in Study In Scarlet: ', ', '.join(diff_moby_vs_scarlet))
+print('=============\nIn Moby Dick, but not in Study In Scarlet: ', ', '.join(diff_moby_vs_scarlet))
