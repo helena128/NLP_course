@@ -36,7 +36,7 @@ text = Text(tokens)
 fdist = FreqDist(text)
 fdist.plot(num_of_words_to_plot, cumulative = False)
 scarlet_commons = [word for word, counts in fdist.most_common(num_of_words_compare)]
-print('Most common words for Study in Scarlet:\n', fdist.most_common(num_of_words_to_plot), '\n\n')
+print('Most common words for Study in Scarlet:\n', fdist.most_common(num_of_words_to_plot), '\n')
 
 # Moby Dick frequencies
 moby_raw_text = gutenberg.raw(moby_file_name)
