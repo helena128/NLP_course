@@ -58,4 +58,13 @@ for win in window_range:
 	print("{}\t{}".format(win, precision))
 plot_simple_graph("window_vs_precision.png", window_range, precision_per_window)
 
-# Experimenting with different settings
+# Experimenting with dimensions
+size_range = [i * 50 for i in range(1, 7)]
+precision_per_size = []
+print("\nSize\tPrecision")
+for s in size_range:
+	model = Word2Vec([tokens], window=5, min_count=1, size=s)
+	precision = precision_at_k(model, search_word, None, k, expectations, log=False)
+	precision_per_size.append(precision)
+	print("{}\t{}".format(s, precision))
+plot_simple_graph("size_vs_precision.png", size_range, precision_per_size)
