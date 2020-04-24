@@ -1,8 +1,11 @@
 from nltk import sent_tokenize, word_tokenize
 from gensim.models import Word2Vec
-from normalizer import normalize
+from normalizer import normalize_sentence
 from visualizer import visualize, plot_simple_graph
 from measurer import precision_at_k
+from sentence_analysator import SentenceModel
+from operator import is_not
+from functools import partial
 
 # Constants
 file_path = "/home/helena/Documents/NLP/data/study_in_scarlet.txt"
@@ -14,18 +17,16 @@ model_window_20_file = "word2vec_model_20_window.model"
 file = open(file_path, 'r')
 text = file.read()
 
-# Split into docs, tokenize & normalize
-#sentences = sent_tokenize(text)
-#documents = ['\n'.join(sentences[x: x + num_of_sentences]) for x in range(0, len(sentences), num_of_sentences)]
-#documents = list(map(lambda d: normalize(word_tokenize(d)), documents))
-#print(documents[:2])
-
-tokens = normalize(word_tokenize(text))
+# Tokenize & normalize
+sentences = sent_tokenize(text)
+sentences = list(map(lambda s: normalize_sentence(s), sentences))
+sentences = list(filter(partial(is_not, None), sentences))
+print(sentences[:2])
 
 # Create model
-settings = {'workers': 3, 'min_count': 1}
-model5 = Word2Vec([tokens], window = 5, **settings)
-model20 = Word2Vec([tokens], window = 20, **settings)
+settings = {'workers': 3, 'min_count': 1, 'sg': 1}
+model5 = Word2Vec(sentences, window = 5, **settings)
+model20 = Word2Vec(sentences, window = 20, **settings)
 model5.save(model_window_5_file)
 model20.save(model_window_20_file)
 
@@ -36,10 +37,9 @@ for query in sample_queries:
 	print('Results for query', query, ':', results)
 
 # Visualization
-'''
 visualize(model5, 'Study in scarlett, window=5, no split', 'model5.png')
 visualize(model5, 'Study in scarlett, window=20, no split', 'model20.png')
-'''
+
 
 # Precision@K
 k = 30
@@ -48,6 +48,7 @@ expectations = ['sherlock', 'asked', 'remarked', 'mr', 'observed', 'seemed', 'fo
 precision_at_k(model5, search_word, None, k, expectations)
 
 # Experimenting with different window size
+'''
 window_range = [i for i in range(5, 11)]
 precision_per_window = []
 print("Window\tPrecision")
@@ -64,7 +65,16 @@ precision_per_size = []
 print("\nSize\tPrecision")
 for s in size_range:
 	model = Word2Vec([tokens], window=5, min_count=1, size=s)
-	precision = precision_at_k(model, search_word, None, k, expectations, log=False)
+	precision = precision_at_k(model, search_word, None, k, expectations, log=False,)
 	precision_per_size.append(precision)
 	print("{}\t{}".format(s, precision))
 plot_simple_graph("size_vs_precision.png", size_range, precision_per_size)
+'''
+
+# Sentence model
+
+queries = ['sherlock holmes said', 'little girl']
+sent_model = SentenceModel(sentences, model5.wv)
+for q in queries:
+	results = sent_model.search(q, 5)
+	print("Results for", q, ":", results)

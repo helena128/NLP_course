@@ -76,3 +76,10 @@ def normalize(words):
     words = replace_numbers(words)
     words = remove_stopwords(words)
     return words
+
+def normalize_sentence(sent):
+    words_in_sent = word_tokenize(sent)
+    normalized_words_in_sent = normalize(words_in_sent)
+    if len(normalized_words_in_sent) > 1:
+        return normalized_words_in_sent
+    return None
