@@ -30,5 +30,6 @@ def visualize(model, label, pic_name):
 	tsne_plot_2d(label, embeddings_2d, pic_name, a=0.1)
 
 def plot_simple_graph(name, x, y):
+	plt.clf()
 	plt.scatter(x, y, label="Window vs precision")
 	plt.savefig(name, format='png', dpi=150, bbox_inches='tight')
