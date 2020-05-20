@@ -1,0 +1,77 @@
+> Cluster label: 2: titles?
+>> CHAPTER V. OUR ADVERTISEMENT BRINGS A VISITOR.
+>> CHAPTER VII.
+>> Section 3.
+
+> Cluster label: 9: ???
+>> JOHN FERRIER TALKS WITH THE PROPHET.
+>> 97163, by
+Barraud, of London.
+>> PART I.
+
+> Cluster label: 3: some generalization (all, grouped, were)
+>> Nearly all the individual works in the
+collection are in the public domain in the United States.
+>> They were buzzards, the
+vultures of the west, whose coming is the forerunner of death.
+>> They were grouped round the bier in the early hours of
+the morning, when, to their inexpressible fear and astonishment,
+the door was flung open, and a savage-looking, weather-beaten man in
+tattered garments strode into the room.
+
+> Cluster label: 8: activity
+>> When I returned with
+the pistol the table had been cleared, and Holmes was engaged in his
+favourite occupation of scraping upon his violin.
+>> They were about to resume their journey when one of the youngest and
+keenest-eyed uttered an exclamation and pointed up at the rugged crag
+above them.
+>> The valley in which he found
+himself divided and sub-divided into many gorges, which were so like
+each other that it was impossible to distinguish one from the other.
+
+> Cluster label: 5: men & their professions
+>> I was to bring a certain sum a week to the
+owner, and whatever was over that I might keep for myself.
+>> “I should have more faith,” he said; “I ought to know by
+this time that when a fact appears to be opposed to a long train of
+deductions, it invariably proves to be capable of bearing some other
+interpretation.
+>> Let him, on meeting a fellow-mortal, learn at a glance to
+distinguish the history of the man, and the trade or profession to
+which he belongs.
+
+> Cluster label: 4: government stuff
+>> Political
+assassins are only too glad to do their work and to fly.
+>> It has been said there is nothing appertaining to life upon the broad
+plain.
+>> Such a marriage he
+regarded as no marriage at all, but as a shame and a disgrace.
+
+> Cluster label: 6: 
+>> ‘You have murdered your brother.’
+
+“‘Arthur would rather that we spoke the truth,’ the girl answered
+firmly.
+>> “Take a seat, and try one of these cigars,” he said.
+>> Of course, Doctor Watson, this is
+strictly between ourselves.
+
+> Cluster label: 1: emotions
+>> “I could not help it,” she said, in answer to his look.
+>> He little knew how far that iron grasp could
+reach, or how soon it was to close upon them and crush them.
+>> I know
+well that I have it in me to make my name famous.
+
+> Cluster label: 0: exclamation
+>> “Yes.
+>> Hullo!
+>> “Hurry on!
+
+> Cluster label: 7: some numbers
+>> 1.E.3.
+>> 1.E.6.
+>> 1.E.3.
+
