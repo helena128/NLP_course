@@ -4,7 +4,6 @@ from nltk import Text, FreqDist
 from functools import reduce
 import operator
 import string
-#from nltk.book import text1
 from nltk.corpus import gutenberg
 
 num_of_words_to_plot = 20
@@ -23,11 +22,8 @@ tokenized_sentences = sent_tokenize(webtext.raw(file_path))
 tokenizer = RegexpTokenizer(r'\w+')
 
 stop = stopwords.words('english') + list(string.punctuation)
-#raw_tokens = word_tokenize(webtext.raw(file_path).lower())
 raw_tokens = tokenizer.tokenize(webtext.raw(file_path).lower())
 tokens = [i for i in raw_tokens if i not in stop]
-#print(tokenized_sentences[20])
-#print(tokenized_words[20], tokenized_words[21])
 
 # Convert to nltk text
 text = Text(tokens)
